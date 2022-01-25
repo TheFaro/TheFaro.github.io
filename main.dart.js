@@ -19249,18 +19249,18 @@ _.go=f
 _.a=null
 _.b=g
 _.c=null},
-TE:function TE(a){this.a=a},
+TF:function TF(a){this.a=a},
 TA:function TA(a,b){this.a=a
 this.b=b},
-TB:function TB(a,b){this.a=a
-this.b=b},
-TC:function TC(a){this.a=a},
-TD:function TD(a,b){this.a=a
-this.b=b},
-TF:function TF(a){this.a=a},
-Tz:function Tz(a){this.a=a},
-TG:function TG(a){this.a=a},
+TB:function TB(a){this.a=a},
 Ty:function Ty(a){this.a=a},
+TC:function TC(a,b){this.a=a
+this.b=b},
+TD:function TD(a){this.a=a},
+TE:function TE(a,b){this.a=a
+this.b=b},
+TG:function TG(a){this.a=a},
+Tz:function Tz(a){this.a=a},
 Tx:function Tx(a,b,c){this.a=a
 this.b=b
 this.c=c},
@@ -63493,7 +63493,7 @@ A.Ob.prototype={}
 A.rb.prototype={
 lK(){var s=0,r=P.a_(t.AA),q,p=2,o,n=[],m,l,k,j,i,h,g,f
 var $async$lK=P.W(function(a,b){if(a===1){o=b
-s=p}while(true)switch(s){case 0:i=P.jD("https://ummo-voter.herokuapp.com/election/current",0,null)
+s=p}while(true)switch(s){case 0:i=P.jD("f/election/current",0,null)
 h=t.N
 g=P.ar(["Content-Type","application/json"],h,h)
 p=4
@@ -63534,7 +63534,7 @@ s=3
 return P.ac(V.mM(),$async$p5)
 case 3:a=a1.eZ(a2.aV(a5.a,"student_id"))
 a.toString
-m=P.jD("https://ummo-voter.herokuapp.com/vote/ballot",0,null)
+m=P.jD("f/vote/ballot",0,null)
 h=H.a([],t.gG)
 g=t.N
 l=P.ar(["Content-Type","application/json","jwt",u.B],g,g)
@@ -63577,7 +63577,7 @@ s=3
 return P.ac(V.mM(),$async$nI)
 case 3:f=d.eZ(c.aV(a0.a,"student_id"))
 f.toString
-m=P.jD("https://ummo-voter.herokuapp.com"+("/vote/history?id="+f+"&election="+a),0,null)
+m=P.jD("f"+("/vote/history?id="+f+"&election="+a),0,null)
 f=t.N
 l=P.ar(["Content-Type","application/json","jwt",u.B],f,f)
 p=5
@@ -63943,20 +63943,17 @@ gKl(){var s=this.dx
 return s==null?H.f(H.r("currentDate")):s},
 gKJ(){var s=this.dy
 return s==null?H.f(H.r("endDate")):s},
-aW(){var s,r,q=this
-q.bu()
-s=q.e
-q.f=s.lK()
-r=t.P
-q.gKG().bO(0,new Y.TE(q),r).hV(new Y.TF(q))
-s.nI(q.db).bO(0,new Y.TG(q),r)},
+aW(){var s=this
+s.bu()
+s.f=s.e.lK()
+s.gKG().bO(0,new Y.TF(s),t.P).hV(new Y.TG(s))},
 m(a){var s,r
 try{}catch(r){s=H.P(r)
 P.cT(s)}this.br(0)},
 N(a,b){var s=t.w,r=b.L(s).f
 s=b.L(s).f
 return new K.et(K.aj(b).l6(C.j),new T.dt(new Y.Tx(this,r.a.a,s.a.b),null),null)}}
-Y.TE.prototype={
+Y.TF.prototype={
 $1(a){var s,r,q,p,o
 P.cT("Retrieved election.")
 s=a.e
@@ -63973,34 +63970,44 @@ s.toString
 if(s.a<Date.now()){P.cT("Moving to results")
 s=r.c
 s.toString
-K.oF(s,N.mO(C.iK))}}s=a.f
-r=this.a
-q=r.z
-p=s.a
+K.oF(s,N.mO(C.iK))}}s=this.a
+r=s.db
+if(r!=="")s.e.nI(r).bO(0,new Y.TB(s),t.P)
+r=a.f
+q=s.z
+p=r.a
 o=q.a
-if(p>o){r.dx=q
-r.dy=s
-r.ap(new Y.TB(r,P.cs(0,r.gKJ().a-r.gKl().a)))}else if(p<o&&a.r.a>o){r.ap(new Y.TC(r))
-P.cT("Active Election.")}else{s=a.r
-if(s.a<o){r.dx=s
-r.dy=q
-r.ap(new Y.TD(r,P.cs(0,r.gKJ().a-r.gKl().a)))}}},
+if(p>o){s.dx=q
+s.dy=r
+s.ap(new Y.TC(s,P.cs(0,s.gKJ().a-s.gKl().a)))}else if(p<o&&a.r.a>o){s.ap(new Y.TD(s))
+P.cT("Active Election.")}else{r=a.r
+if(r.a<o){s.dx=r
+s.dy=q
+s.ap(new Y.TE(s,P.cs(0,s.gKJ().a-s.gKl().a)))}}},
 $S:383}
 Y.TA.prototype={
 $0(){this.a.db=this.b.a},
 $S:0}
 Y.TB.prototype={
+$1(a){if(J.ra(a))P.fn(C.B,new Y.Ty(this.a),t.P)},
+$S:384}
+Y.Ty.prototype={
+$0(){var s=this.a.c
+s.toString
+K.oF(s,N.mO(C.iK))},
+$S:2}
+Y.TC.prototype={
 $0(){var s=this.a,r=this.b.a
 s.ch=C.f.c_(r,36e8)
 s.Q=C.f.c_(r,864e8)
 s.cx=C.f.c_(r,6e7)
 s.cy=C.f.c_(r,1e6)
 s.fr=!1},
-$S:0}
-Y.TC.prototype={
-$0(){this.a.fr=!0},
 $S:0}
 Y.TD.prototype={
+$0(){this.a.fr=!0},
+$S:0}
+Y.TE.prototype={
 $0(){var s=this.a,r=this.b.a
 s.ch=C.f.c_(r,36e8)
 s.Q=C.f.c_(r,864e8)
@@ -64008,7 +64015,7 @@ s.cx=C.f.c_(r,6e7)
 s.cy=C.f.c_(r,1e6)
 s.fr=!1},
 $S:0}
-Y.TF.prototype={
+Y.TG.prototype={
 $1(a){var s
 P.cT(J.aA(a))
 s=this.a
@@ -64017,14 +64024,6 @@ $S:7}
 Y.Tz.prototype={
 $0(){this.a.fr=!0},
 $S:0}
-Y.TG.prototype={
-$1(a){if(J.ra(a))P.fn(C.B,new Y.Ty(this.a),t.P)},
-$S:384}
-Y.Ty.prototype={
-$0(){var s=this.a.c
-s.toString
-K.oF(s,N.mO(C.iK))},
-$S:2}
 Y.Tx.prototype={
 $1(a){var s,r,q,p,o,n=null,m=this.a,l=this.b
 if(m.fr)m=new B.o9(m.gKG(),new Y.Tw(m,l),n,t.NL)
@@ -65920,9 +65919,9 @@ m(N,"Ah","afc",124)
 m(N,"Ai","an7",124)})();(function inheritance(){var s=hunkHelpers.mixin,r=hunkHelpers.inherit,q=hunkHelpers.inheritMany
 r(P.A,null)
 q(P.A,[H.c1,H.oI,H.Aw,H.Ot,H.ru,H.iB,H.hV,H.Lr,H.PS,J.h,H.abt,H.abv,H.Bl,H.Bk,H.PD,H.Cb,H.RQ,H.BV,H.Rt,H.Fl,H.mB,H.Lq,H.YN,H.fm,H.Bu,H.q0,H.ZT,H.Rh,H.a1l,H.xt,H.d1,H.acz,H.aL,H.aP,H.ei,H.Xc,H.PM,H.HG,H.Q_,H.mS,H.WD,H.oO,H.mo,H.jd,H.a09,H.WE,H.kw,H.Xz,H.cv,H.a6N,H.Yh,H.a9b,H.pu,H.a1m,H.Wf,H.C4,H.FA,H.wb,H.mJ,H.CF,H.CE,H.mp,H.l4,H.X6,H.CM,H.we,H.tG,H.UB,H.D4,H.iP,H.UJ,H.VL,H.OZ,H.a2y,H.WS,H.C6,H.C5,P.WQ,H.WT,H.WV,H.Ew,H.X4,H.a3F,H.MZ,H.jL,H.nb,H.qD,H.WZ,H.acG,H.Oc,H.xg,H.eQ,H.ZO,H.Fz,H.he,H.cl,H.Of,H.lS,H.RJ,H.td,H.ZC,H.Zy,H.t_,P.yb,H.h7,H.Uo,H.Uq,H.a13,H.a17,H.a2N,H.EH,H.a1q,H.B6,H.Cm,H.pt,H.Pk,H.Sn,H.Cx,H.a22,H.ve,H.Dd,H.UZ,H.a0W,H.b5,H.op,H.cY,H.vQ,H.a23,H.V_,H.Vn,H.a24,H.lH,H.lD,H.te,H.lI,H.tf,H.QH,H.j7,H.pE,H.mW,H.wF,H.hZ,H.ut,H.k5,H.xh,H.bZ,H.jA,H.cx,H.IW,H.OW,H.Rv,H.pC,H.wA,H.Rp,H.AK,H.o4,H.Uj,H.a1N,H.a1E,H.TN,H.Rd,H.QZ,H.wU,H.bD,H.a2D,H.GL,P.Sf,H.GO,H.ace,J.fN,P.o,H.Ba,P.an,P.bB,H.cL,P.CY,H.o7,H.C1,H.Cw,H.pU,H.tk,H.GA,H.pv,P.ov,H.nT,H.Un,H.a2m,H.DK,H.tj,H.zh,H.a7q,H.V1,H.De,H.tY,H.qu,H.a34,H.jr,H.a86,H.a4A,H.hg,H.J8,H.zw,P.zu,P.Hc,P.He,P.l_,P.ex,P.nB,P.dC,P.Ho,P.xi,P.im,P.V,P.Hd,P.bO,P.fA,P.G5,P.zk,P.Hf,P.GX,P.Kj,P.If,P.a58,P.q5,P.LY,P.hx,P.a7E,P.a7F,P.a7D,P.a75,P.a76,P.a74,P.N3,P.qX,P.N2,P.xP,P.zZ,P.nf,P.a68,P.qs,P.tT,P.ya,P.m9,P.F,P.JE,P.zA,P.JB,P.cF,P.MS,P.LS,P.LR,P.iq,P.Bp,P.a3E,P.a3D,P.Bd,P.a61,P.a8P,P.a8O,P.b3,P.dJ,P.ay,P.DQ,P.wo,P.ID,P.fl,P.Cd,P.aZ,P.au,P.M1,P.G4,P.bI,P.l6,P.a2q,P.fJ,P.mI,W.PX,W.abP,W.qk,W.cg,W.uK,W.z7,W.M5,W.tl,W.Bs,W.a4V,W.a7G,W.MT,P.a87,P.a2O,P.iW,P.DI,P.eL,P.C2,P.Bh,P.Ei,P.a4B,P.zj,P.jH,P.Pu,P.DO,P.u,P.bF,P.eN,P.a5F,P.u1,P.h3,P.x,P.ws,P.wt,P.Ed,P.bQ,P.nN,P.OQ,P.ow,P.RX,P.jk,P.Et,P.GJ,P.iS,P.nz,P.kn,P.j8,P.i2,P.v6,P.oP,P.oQ,P.ca,P.c6,P.ZP,P.kx,P.fk,P.jt,P.wy,P.wB,P.mV,P.kL,P.fB,P.Gh,P.aU,P.cM,P.hY,P.AX,P.OU,P.pM,P.Au,P.B0,P.P9,P.CD,P.WW,T.G7,A.hE,A.OD,M.b_,Y.CJ,X.ey,B.am,G.pV,G.AC,T.a_3,S.rn,S.MB,Z.uW,S.rl,S.rk,S.li,S.k_,R.ai,Y.Im,N.LV,F.a25,T.Jg,K.BA,L.e1,L.BH,D.xo,Z.Ic,Z.AY,R.I_,R.Mm,K.uJ,K.I2,K.I0,Y.di,U.J_,N.AS,B.hF,Y.o0,Y.iK,Y.a6K,Y.ae,Y.hJ,D.e0,D.adj,F.eo,B.C,T.dA,G.a2L,G.vj,R.hn,O.cm,D.CC,D.cJ,D.CA,D.qg,D.SA,N.a7r,N.ty,O.iM,O.fh,O.fi,O.eB,F.Ky,F.eX,F.GS,F.HH,F.HO,F.HM,F.HK,F.HL,F.HJ,F.HN,F.HQ,F.HP,F.HI,K.nc,K.lR,O.hM,O.qU,O.fY,T.ou,T.ui,T.ot,B.jP,B.adf,B.X5,B.Da,O.xv,F.HS,F.qR,O.X0,G.X3,S.BY,S.tz,S.fu,N.px,N.py,R.ih,R.pR,R.yC,R.ii,S.a2b,K.Fq,T.a_4,V.Ha,D.q_,D.jI,Q.JF,D.Hl,M.Hm,X.Hn,M.Hq,A.Hs,A.y6,A.JA,A.Jz,A.JR,M.rE,M.P3,M.Ht,A.Hy,F.Hz,F.y4,K.HC,A.HF,Z.I6,Z.y5,K.bN,Y.In,G.Iq,T.IB,E.a5_,E.q8,A.S9,A.RS,A.RR,A.S8,S.IY,M.hN,R.oj,R.qj,Y.bq,L.ts,L.ev,L.I9,L.a77,L.oi,L.Jm,Q.Dh,Q.ng,M.kr,U.BI,V.cZ,V.aX,V.hv,V.dD,O.ur,E.K4,U.Kf,V.uq,K.j5,K.Kh,R.KM,U.GW,B.KO,T.KS,T.y3,M.ew,M.YU,M.Fm,K.PQ,B.VT,M.vS,X.Lw,X.y7,Q.LG,N.id,K.FR,K.LM,R.M6,R.y2,U.Ma,T.Mf,F.wI,R.Mk,R.Mn,X.mc,X.Mr,X.ql,X.IT,X.MV,A.Ms,S.Mt,T.Mv,T.Gs,U.vV,U.MP,K.eg,K.Gi,G.oZ,G.AL,G.GG,G.nD,N.Ec,K.rw,Y.AU,Y.d9,F.B_,U.iA,U.Ck,Z.PA,X.oc,X.nZ,X.rZ,V.c3,E.TX,E.Hv,E.Kk,M.tJ,M.h1,M.hD,L.Jh,L.h0,L.fo,L.Ji,L.tL,G.Av,G.kf,D.ZS,M.M3,U.pI,U.i1,U.Gp,U.a4y,U.mY,A.Ml,M.a10,M.wm,M.a4H,M.a6L,M.a8I,N.wQ,N.vJ,K.i_,S.qo,S.y0,S.bX,T.Qc,D.pJ,F.Co,F.Dn,F.ko,F.lx,F.a66,T.rq,T.AD,T.D6,T.u8,A.JS,A.Nf,K.ZB,K.Er,K.ax,K.dg,K.Q,K.vl,K.a7L,K.a7M,E.dz,E.tE,E.vo,E.BG,G.CH,G.LH,G.Y6,F.iX,F.Yc,K.XB,K.wn,K.Wm,A.GI,Q.B4,Q.kH,N.vZ,N.kS,N.x4,N.yX,N.ir,N.qe,N.mE,N.hh,V.EC,M.pL,M.n1,M.wM,N.Zp,A.w8,A.c8,A.Ly,A.jF,A.jN,A.Zq,A.Qd,A.LB,E.Zz,Q.AH,F.OC,Q.OM,N.wa,T.k2,Q.om,Q.Ju,Q.CI,Q.D2,Q.u2,Q.D3,G.Jv,F.h6,F.v5,F.ux,U.a1i,U.Up,U.Ur,U.a14,U.a18,A.VM,A.uz,A.k0,A.kt,B.m7,B.eH,B.KT,B.KU,B.Xi,B.cd,K.cw,X.Oo,X.kK,V.Gb,B.Ds,B.mX,N.FP,N.FQ,N.pF,N.e9,N.a1D,N.a1O,N.tr,N.bT,N.i9,N.a26,N.a1P,N.Gl,U.Jr,U.GV,U.GU,B.rO,B.f9,U.uL,L.lk,N.fE,N.GM,Q.eA,Q.xE,D.Gr,O.kk,O.Hi,O.Sh,O.Gx,O.J3,O.k8,O.tu,O.J1,U.qa,U.kP,U.J7,U.q4,U.Io,U.Qq,U.Nl,U.Nk,A.rv,N.a83,N.q7,N.Jj,N.P0,N.lA,N.og,D.lT,D.ZA,T.oa,T.a5I,T.jJ,K.mk,X.dk,M.B8,A.eO,L.qC,L.BM,F.mh,F.DE,E.zv,K.p3,K.hf,K.Yx,K.Gu,K.dT,K.l2,K.yW,K.Lj,E.uQ,L.qh,S.zi,S.uT,K.hd,Z.Ff,T.Dk,M.Fp,M.Z8,K.a9j,M.ji,M.IX,G.x_,L.w1,A.w2,B.Ft,F.Ze,F.Fr,E.p8,X.LF,X.N4,G.a0N,F.wJ,F.Mj,F.Gm,U.jl,U.dr,E.AP,G.AQ,T.OK,E.Bg,R.uu,M.PR,O.a1k,X.WB,X.Eh,E.WR,V.pd,E.a__,Y.a0U,D.FX,Y.pn,U.T4,U.dR,U.hu,V.hk,G.FZ,A.Ob,G.VZ,T.iD,R.iE,A.iO,Y.pT,X.a1j,E.md,E.aN,E.kB,E.d6,E.hr])
-q(H.c1,[H.Bo,H.Bn,H.aaG,H.a9m,H.Ou,H.PH,H.PI,H.PF,H.PG,H.PE,H.QJ,H.QL,H.QM,H.TK,H.TL,H.TI,H.TJ,H.UC,H.UD,H.UV,H.a9P,H.a9Q,H.a9R,H.a9S,H.a9T,H.a9U,H.a9V,H.a9W,H.UF,H.UG,H.UH,H.UI,H.UK,H.VV,H.a_6,H.a_7,H.SX,H.RG,H.RA,H.RB,H.RC,H.RD,H.RE,H.RF,H.Ry,H.RI,H.a3G,H.a9c,H.a6Q,H.a6S,H.a6T,H.a6U,H.a6V,H.a6W,H.a8D,H.a8E,H.a8F,H.a8G,H.a8H,H.a6D,H.a6E,H.a6F,H.a6G,H.a6H,H.Ud,H.Ue,H.Zl,H.Zm,H.aa3,H.aa4,H.aa5,H.aa6,H.aa7,H.aa8,H.aa9,H.aaa,H.Qm,H.VF,H.a1B,H.a1G,H.a1H,H.a1I,H.So,H.Sp,H.a6Y,H.Rs,H.Rq,H.Rr,H.Qh,H.Qi,H.Qj,H.Qk,H.TT,H.TU,H.TR,H.Om,H.S4,H.S5,H.TP,H.TO,H.Po,H.PP,H.Sz,H.CV,H.Gg,H.Uw,H.Uv,H.aaD,H.aaF,P.a3o,P.a3n,P.a9r,P.a9q,P.Sx,P.a5u,P.a5C,P.a1e,P.a1g,P.a1d,P.a4U,P.a4T,P.a7y,P.a7x,P.a5G,P.a67,P.Vb,P.a0Y,P.a1_,P.a6_,P.Qa,P.Qb,P.QW,P.QX,P.a2s,P.a9E,P.a9F,W.Ri,W.RO,W.TM,W.a5f,W.a5g,W.We,W.Wd,W.a7V,W.a7W,W.a8a,P.a9y,P.RY,P.RZ,P.S_,P.a9B,P.a9C,P.aaj,P.aak,P.aal,P.aaW,P.aaX,M.Pb,M.Pd,M.Pg,D.a4I,D.a4L,D.a4M,E.a4O,K.Q6,K.Wa,K.a4Q,U.Sc,U.Sd,U.Se,U.aas,R.a11,O.a1r,D.a5D,S.a6d,D.Ve,K.a47,K.a48,K.a49,K.a3O,K.a3P,K.a3Q,K.a4_,K.a40,K.a41,K.a42,K.a43,K.a44,K.a45,K.a46,K.a3Y,K.a3M,K.a3Z,K.a3L,K.a3R,K.a3S,K.a3T,K.a3U,K.a3V,K.a3W,K.a3X,E.Qp,R.a5S,L.a79,Q.a7g,M.a6s,M.a6f,M.a6g,M.a6h,O.Vi,K.Wv,M.YR,M.YY,E.a6j,E.a6l,E.a6k,E.a6i,N.a7X,Z.a8h,Z.a8i,E.a1K,E.a1L,K.a3l,S.a8w,S.a8x,S.a8y,S.a8A,S.a8B,Y.a4E,Y.a4F,Z.PB,Z.PC,E.a4a,M.U7,M.U1,M.U0,L.Or,L.U9,G.Ui,G.Uh,V.a7T,V.a7U,N.Yl,S.OT,D.XG,D.XL,D.XI,A.VP,A.VO,K.XZ,K.Y_,K.XY,Q.Y1,Q.Y2,G.Y7,F.Y9,F.Yb,F.Ya,K.Yg,K.Ye,K.Yf,K.Yd,Q.Yk,Q.Yj,N.Z0,N.Z_,M.a2c,A.ZF,A.ZD,A.a7R,A.a7Q,A.a7O,A.a7P,A.a9v,A.ZI,A.ZH,A.Zr,A.Zu,A.Zs,A.Zv,A.Zt,A.Zw,A.Zx,Q.P8,N.a4X,A.OL,A.Vz,B.Xk,K.Yt,K.Yu,K.Ys,B.S1,B.S0,U.a9O,U.Oi,U.Oj,S.a9d,S.a9e,B.a5o,L.a3x,L.a3C,T.Yw,N.a9i,N.a9g,D.R2,D.Ra,D.R8,D.R7,D.R6,D.a5c,O.Si,U.a9K,U.Sl,U.Sk,U.a73,U.Qt,U.Qu,U.Qw,U.Qx,U.Qr,U.Qz,U.QA,U.QC,U.QD,U.a70,U.a71,U.a6Z,U.Xy,N.a5P,N.Rm,N.Rn,N.Rj,N.Rl,N.Rk,N.WA,N.XT,N.VU,D.SG,D.SJ,D.SL,D.SN,D.SP,D.SI,D.a50,D.a51,D.a52,D.a55,D.a56,D.a57,T.T3,T.T0,T.T_,Y.TW,G.Uc,G.Ub,G.Ua,G.a35,G.a36,G.a37,G.a38,G.a39,G.a3a,G.a3b,G.a3c,G.a3f,G.a3e,G.a3d,G.a3g,G.a3h,G.a3i,G.a3j,M.Ug,L.a9Z,L.aa_,L.aa0,L.a6b,L.a6c,K.Yz,K.Yy,K.YC,K.YE,K.YA,K.W9,K.a7z,K.a7C,K.W7,K.W1,K.W3,K.W5,X.Wn,X.a7n,X.a7l,X.a7m,X.a7k,S.Wu,K.a7t,T.a2j,T.a2i,T.a6B,T.a6y,K.Z6,K.Z7,Q.Za,A.Zb,B.Zd,F.Zj,F.Zg,F.Zi,E.Zn,E.Xt,E.Xp,E.Xl,E.Xm,E.Xn,E.Xr,E.Xu,E.Xv,G.a0S,F.a28,F.a29,F.a27,F.a8k,F.a8m,F.a8o,F.a8q,G.aaz,G.aaU,G.OJ,O.OX,O.OY,Z.P6,Z.Pn,R.Vs,N.aau,M.PT,M.PU,M.aah,T.ZX,V.ZZ,U.T6,U.T5,U.T7,U.T9,U.Tb,U.T8,U.Tp,R.Pr,R.Ps,A.Rf,A.Rg,U.a31,U.a2Y,U.a3_,V.a4i,V.a4b,V.a4k,V.a4s,V.a4x,Y.TE,Y.TF,Y.TG,Y.Tx,V.a80,N.a8X,B.a90,O.a9a,O.a92,O.a93,O.a94,G.T1,N.a0K,N.a0L,F.Vx,F.Vy])
+q(H.c1,[H.Bo,H.Bn,H.aaG,H.a9m,H.Ou,H.PH,H.PI,H.PF,H.PG,H.PE,H.QJ,H.QL,H.QM,H.TK,H.TL,H.TI,H.TJ,H.UC,H.UD,H.UV,H.a9P,H.a9Q,H.a9R,H.a9S,H.a9T,H.a9U,H.a9V,H.a9W,H.UF,H.UG,H.UH,H.UI,H.UK,H.VV,H.a_6,H.a_7,H.SX,H.RG,H.RA,H.RB,H.RC,H.RD,H.RE,H.RF,H.Ry,H.RI,H.a3G,H.a9c,H.a6Q,H.a6S,H.a6T,H.a6U,H.a6V,H.a6W,H.a8D,H.a8E,H.a8F,H.a8G,H.a8H,H.a6D,H.a6E,H.a6F,H.a6G,H.a6H,H.Ud,H.Ue,H.Zl,H.Zm,H.aa3,H.aa4,H.aa5,H.aa6,H.aa7,H.aa8,H.aa9,H.aaa,H.Qm,H.VF,H.a1B,H.a1G,H.a1H,H.a1I,H.So,H.Sp,H.a6Y,H.Rs,H.Rq,H.Rr,H.Qh,H.Qi,H.Qj,H.Qk,H.TT,H.TU,H.TR,H.Om,H.S4,H.S5,H.TP,H.TO,H.Po,H.PP,H.Sz,H.CV,H.Gg,H.Uw,H.Uv,H.aaD,H.aaF,P.a3o,P.a3n,P.a9r,P.a9q,P.Sx,P.a5u,P.a5C,P.a1e,P.a1g,P.a1d,P.a4U,P.a4T,P.a7y,P.a7x,P.a5G,P.a67,P.Vb,P.a0Y,P.a1_,P.a6_,P.Qa,P.Qb,P.QW,P.QX,P.a2s,P.a9E,P.a9F,W.Ri,W.RO,W.TM,W.a5f,W.a5g,W.We,W.Wd,W.a7V,W.a7W,W.a8a,P.a9y,P.RY,P.RZ,P.S_,P.a9B,P.a9C,P.aaj,P.aak,P.aal,P.aaW,P.aaX,M.Pb,M.Pd,M.Pg,D.a4I,D.a4L,D.a4M,E.a4O,K.Q6,K.Wa,K.a4Q,U.Sc,U.Sd,U.Se,U.aas,R.a11,O.a1r,D.a5D,S.a6d,D.Ve,K.a47,K.a48,K.a49,K.a3O,K.a3P,K.a3Q,K.a4_,K.a40,K.a41,K.a42,K.a43,K.a44,K.a45,K.a46,K.a3Y,K.a3M,K.a3Z,K.a3L,K.a3R,K.a3S,K.a3T,K.a3U,K.a3V,K.a3W,K.a3X,E.Qp,R.a5S,L.a79,Q.a7g,M.a6s,M.a6f,M.a6g,M.a6h,O.Vi,K.Wv,M.YR,M.YY,E.a6j,E.a6l,E.a6k,E.a6i,N.a7X,Z.a8h,Z.a8i,E.a1K,E.a1L,K.a3l,S.a8w,S.a8x,S.a8y,S.a8A,S.a8B,Y.a4E,Y.a4F,Z.PB,Z.PC,E.a4a,M.U7,M.U1,M.U0,L.Or,L.U9,G.Ui,G.Uh,V.a7T,V.a7U,N.Yl,S.OT,D.XG,D.XL,D.XI,A.VP,A.VO,K.XZ,K.Y_,K.XY,Q.Y1,Q.Y2,G.Y7,F.Y9,F.Yb,F.Ya,K.Yg,K.Ye,K.Yf,K.Yd,Q.Yk,Q.Yj,N.Z0,N.Z_,M.a2c,A.ZF,A.ZD,A.a7R,A.a7Q,A.a7O,A.a7P,A.a9v,A.ZI,A.ZH,A.Zr,A.Zu,A.Zs,A.Zv,A.Zt,A.Zw,A.Zx,Q.P8,N.a4X,A.OL,A.Vz,B.Xk,K.Yt,K.Yu,K.Ys,B.S1,B.S0,U.a9O,U.Oi,U.Oj,S.a9d,S.a9e,B.a5o,L.a3x,L.a3C,T.Yw,N.a9i,N.a9g,D.R2,D.Ra,D.R8,D.R7,D.R6,D.a5c,O.Si,U.a9K,U.Sl,U.Sk,U.a73,U.Qt,U.Qu,U.Qw,U.Qx,U.Qr,U.Qz,U.QA,U.QC,U.QD,U.a70,U.a71,U.a6Z,U.Xy,N.a5P,N.Rm,N.Rn,N.Rj,N.Rl,N.Rk,N.WA,N.XT,N.VU,D.SG,D.SJ,D.SL,D.SN,D.SP,D.SI,D.a50,D.a51,D.a52,D.a55,D.a56,D.a57,T.T3,T.T0,T.T_,Y.TW,G.Uc,G.Ub,G.Ua,G.a35,G.a36,G.a37,G.a38,G.a39,G.a3a,G.a3b,G.a3c,G.a3f,G.a3e,G.a3d,G.a3g,G.a3h,G.a3i,G.a3j,M.Ug,L.a9Z,L.aa_,L.aa0,L.a6b,L.a6c,K.Yz,K.Yy,K.YC,K.YE,K.YA,K.W9,K.a7z,K.a7C,K.W7,K.W1,K.W3,K.W5,X.Wn,X.a7n,X.a7l,X.a7m,X.a7k,S.Wu,K.a7t,T.a2j,T.a2i,T.a6B,T.a6y,K.Z6,K.Z7,Q.Za,A.Zb,B.Zd,F.Zj,F.Zg,F.Zi,E.Zn,E.Xt,E.Xp,E.Xl,E.Xm,E.Xn,E.Xr,E.Xu,E.Xv,G.a0S,F.a28,F.a29,F.a27,F.a8k,F.a8m,F.a8o,F.a8q,G.aaz,G.aaU,G.OJ,O.OX,O.OY,Z.P6,Z.Pn,R.Vs,N.aau,M.PT,M.PU,M.aah,T.ZX,V.ZZ,U.T6,U.T5,U.T7,U.T9,U.Tb,U.T8,U.Tp,R.Pr,R.Ps,A.Rf,A.Rg,U.a31,U.a2Y,U.a3_,V.a4i,V.a4b,V.a4k,V.a4s,V.a4x,Y.TF,Y.TB,Y.TG,Y.Tx,V.a80,N.a8X,B.a90,O.a9a,O.a92,O.a93,O.a94,G.T1,N.a0K,N.a0L,F.Vx,F.Vy])
 q(H.Bo,[H.aaH,H.aao,H.WH,H.US,H.UO,H.a16,H.YJ,H.YL,H.aaY,H.a4z,H.Pp,H.PO,H.X8,H.Uu,H.aaE,P.a9s,P.aai,P.Sy,P.a5v,P.SV,P.V2,P.Va,P.a0Z,P.a62,P.Wb,P.a2r,P.a2t,P.a8N,P.a8M,P.a9D,W.VA,W.VB,W.VC,W.VD,W.YG,W.YH,W.a19,W.a1a,W.a8R,P.a88,P.a89,P.a2P,P.aap,P.Oz,P.OA,M.Pa,M.Pc,M.Pe,E.Q1,O.X1,S.Vc,S.a6e,Z.a7c,K.a7d,L.a7b,L.a7a,L.a78,Q.a7f,U.a4C,M.YX,M.a7I,N.a7Z,Z.a8f,Z.a8g,Z.a9l,Y.a4D,E.U_,M.U6,M.U3,L.Os,L.VX,S.XC,D.XJ,D.XK,D.XH,F.XP,F.XN,F.XO,F.XM,A.VN,K.WM,K.WL,K.WN,K.WO,Q.Y3,Q.Y4,E.Yi,E.XR,E.XQ,T.Y5,N.Z1,A.a7N,A.ZJ,A.ZK,N.a4Y,U.a15,B.a5p,D.R1,D.R9,U.Qy,U.Qs,U.Qv,U.QB,U.QE,U.a72,U.a7_,U.Xw,U.Xx,A.a5l,N.XU,T.T2,T.a5J,K.a5O,K.a6J,X.a7o,K.a9k,T.a6A,T.a6z,T.a6x,B.Zc,F.a7K,X.a_2,E.a_5,E.a7j,E.a7i,G.OI,R.Vt,U.Ta,V.a4f,V.a4e,V.a4m,Y.Tw,V.a8_,B.a9_,B.a8Z,O.a97,A.aaB])
-q(H.Bn,[H.aaI,H.a9n,H.Ov,H.WI,H.a1o,H.a1p,H.UE,H.UU,H.UL,H.UM,H.UN,H.UP,H.UQ,H.UR,H.SY,H.RH,H.Rz,H.aaK,H.aaL,H.WU,H.a6R,H.X_,H.Od,H.Oe,H.Zk,H.RK,H.RM,H.RL,H.VG,H.a1J,H.a6X,H.YK,H.QI,H.TS,H.S3,H.a1F,H.a2H,H.Ru,H.Pq,H.aaS,H.X9,P.a3p,P.a3q,P.a8s,P.a8r,P.a9p,P.a3s,P.a3t,P.a3u,P.a3v,P.a3w,P.a3r,P.Sw,P.a5q,P.a5y,P.a5w,P.a5s,P.a5x,P.a5r,P.a5B,P.a5A,P.a5z,P.a1b,P.a1f,P.a1h,P.a1c,P.a85,P.a84,P.a33,P.a3K,P.a3J,P.a6O,P.a9u,P.a4S,P.a4R,P.aab,P.a7w,P.a7v,P.a2B,P.a2A,W.RN,P.Pv,P.Pw,P.ab2,M.Pf,D.Q3,D.Q4,E.a4P,U.aag,U.a9t,U.Sb,N.ON,B.Pt,D.SC,D.SB,N.SD,N.SE,K.Ss,K.Sq,K.Sr,T.V7,T.V6,T.V5,O.QP,O.QT,O.QU,O.QQ,O.QR,O.QS,O.X2,S.X7,N.a1w,N.a1x,N.a1y,N.a1z,E.a3m,D.Vd,R.OE,K.a3N,O.a9M,U.a9L,R.a5T,R.a5Q,R.a5R,L.a5H,L.a5W,O.Vg,O.Vh,M.YS,M.YT,M.YO,M.YP,M.YQ,M.a5h,M.YW,M.YV,E.a6r,E.a6q,E.a6p,E.a6n,E.a6o,E.a6m,N.a7Y,Z.a8c,Z.a8b,Z.a8e,Z.a8d,X.a2a,S.a8z,E.TZ,E.TY,E.a69,M.U2,M.U4,M.U5,L.VW,S.XD,S.XF,S.XE,A.VS,A.VR,A.VQ,K.Wx,K.Ww,K.XX,K.Y0,U.Y8,N.Z2,N.Z3,N.Z4,N.ZQ,N.ZR,Q.SU,B.Xh,K.Yq,K.Yr,K.Yp,X.a1t,N.a21,U.a32,S.a9f,B.a5n,B.a5m,L.a3B,L.a3z,L.a3A,L.a3y,N.a9h,N.a2J,N.XV,N.XW,Q.a5a,Q.a5b,D.Rb,D.R_,D.R0,D.Rc,D.R3,D.R4,D.R5,L.a5i,L.a5j,L.a5k,A.St,N.P1,N.P2,N.PK,N.PL,D.SF,D.SH,D.SK,D.SM,D.SO,D.SQ,D.a54,D.a53,T.a5M,T.a5L,T.a5K,G.On,A.a63,A.a64,A.a65,L.a6a,F.a6t,F.a6u,X.VI,X.VH,K.YD,K.YF,K.YB,K.a7B,K.a7A,K.W2,K.W4,K.W6,K.W0,E.a7h,X.a6M,X.Wr,X.Wq,X.Ws,X.Wp,X.Wo,L.a5E,K.a7s,K.Yv,T.a2k,T.a2l,T.a6w,T.VK,T.VJ,Q.Z9,F.Zf,F.Zh,E.Xs,E.Xo,E.Xq,X.a_1,G.a0Q,G.a0R,G.a0P,G.a0T,F.a8j,F.a8l,F.a8n,F.a8p,K.a3k,R.Vr,U.To,U.Tc,U.Tj,U.Tk,U.Tl,U.Tm,U.Th,U.Ti,U.Td,U.Te,U.Tf,U.Tg,U.Tn,U.a5N,U.a2W,U.a2X,U.a2T,U.a2R,U.a2U,U.a2Q,U.a2Z,U.a2V,U.a30,U.a2S,V.a4g,V.a4h,V.a4c,V.a4d,V.a4l,V.a4j,V.a4n,V.a4q,V.a4o,V.a4p,V.a4r,V.a4v,V.a4t,V.a4u,V.a4w,Y.TA,Y.TB,Y.TC,Y.TD,Y.Tz,Y.Ty,Y.Tu,Y.Tt,Y.Tv,Y.Ts,V.a81,V.a82,N.a8Y,N.a8W,N.a8V,N.a8S,N.a8T,N.a8U,O.a96,O.a98,O.a95,O.a99,O.a91])
+q(H.Bn,[H.aaI,H.a9n,H.Ov,H.WI,H.a1o,H.a1p,H.UE,H.UU,H.UL,H.UM,H.UN,H.UP,H.UQ,H.UR,H.SY,H.RH,H.Rz,H.aaK,H.aaL,H.WU,H.a6R,H.X_,H.Od,H.Oe,H.Zk,H.RK,H.RM,H.RL,H.VG,H.a1J,H.a6X,H.YK,H.QI,H.TS,H.S3,H.a1F,H.a2H,H.Ru,H.Pq,H.aaS,H.X9,P.a3p,P.a3q,P.a8s,P.a8r,P.a9p,P.a3s,P.a3t,P.a3u,P.a3v,P.a3w,P.a3r,P.Sw,P.a5q,P.a5y,P.a5w,P.a5s,P.a5x,P.a5r,P.a5B,P.a5A,P.a5z,P.a1b,P.a1f,P.a1h,P.a1c,P.a85,P.a84,P.a33,P.a3K,P.a3J,P.a6O,P.a9u,P.a4S,P.a4R,P.aab,P.a7w,P.a7v,P.a2B,P.a2A,W.RN,P.Pv,P.Pw,P.ab2,M.Pf,D.Q3,D.Q4,E.a4P,U.aag,U.a9t,U.Sb,N.ON,B.Pt,D.SC,D.SB,N.SD,N.SE,K.Ss,K.Sq,K.Sr,T.V7,T.V6,T.V5,O.QP,O.QT,O.QU,O.QQ,O.QR,O.QS,O.X2,S.X7,N.a1w,N.a1x,N.a1y,N.a1z,E.a3m,D.Vd,R.OE,K.a3N,O.a9M,U.a9L,R.a5T,R.a5Q,R.a5R,L.a5H,L.a5W,O.Vg,O.Vh,M.YS,M.YT,M.YO,M.YP,M.YQ,M.a5h,M.YW,M.YV,E.a6r,E.a6q,E.a6p,E.a6n,E.a6o,E.a6m,N.a7Y,Z.a8c,Z.a8b,Z.a8e,Z.a8d,X.a2a,S.a8z,E.TZ,E.TY,E.a69,M.U2,M.U4,M.U5,L.VW,S.XD,S.XF,S.XE,A.VS,A.VR,A.VQ,K.Wx,K.Ww,K.XX,K.Y0,U.Y8,N.Z2,N.Z3,N.Z4,N.ZQ,N.ZR,Q.SU,B.Xh,K.Yq,K.Yr,K.Yp,X.a1t,N.a21,U.a32,S.a9f,B.a5n,B.a5m,L.a3B,L.a3z,L.a3A,L.a3y,N.a9h,N.a2J,N.XV,N.XW,Q.a5a,Q.a5b,D.Rb,D.R_,D.R0,D.Rc,D.R3,D.R4,D.R5,L.a5i,L.a5j,L.a5k,A.St,N.P1,N.P2,N.PK,N.PL,D.SF,D.SH,D.SK,D.SM,D.SO,D.SQ,D.a54,D.a53,T.a5M,T.a5L,T.a5K,G.On,A.a63,A.a64,A.a65,L.a6a,F.a6t,F.a6u,X.VI,X.VH,K.YD,K.YF,K.YB,K.a7B,K.a7A,K.W2,K.W4,K.W6,K.W0,E.a7h,X.a6M,X.Wr,X.Wq,X.Ws,X.Wp,X.Wo,L.a5E,K.a7s,K.Yv,T.a2k,T.a2l,T.a6w,T.VK,T.VJ,Q.Z9,F.Zf,F.Zh,E.Xs,E.Xo,E.Xq,X.a_1,G.a0Q,G.a0R,G.a0P,G.a0T,F.a8j,F.a8l,F.a8n,F.a8p,K.a3k,R.Vr,U.To,U.Tc,U.Tj,U.Tk,U.Tl,U.Tm,U.Th,U.Ti,U.Td,U.Te,U.Tf,U.Tg,U.Tn,U.a5N,U.a2W,U.a2X,U.a2T,U.a2R,U.a2U,U.a2Q,U.a2Z,U.a2V,U.a30,U.a2S,V.a4g,V.a4h,V.a4c,V.a4d,V.a4l,V.a4j,V.a4n,V.a4q,V.a4o,V.a4p,V.a4r,V.a4v,V.a4t,V.a4u,V.a4w,Y.TA,Y.Ty,Y.TC,Y.TD,Y.TE,Y.Tz,Y.Tu,Y.Tt,Y.Tv,Y.Ts,V.a81,V.a82,N.a8Y,N.a8W,N.a8V,N.a8S,N.a8T,N.a8U,O.a96,O.a98,O.a95,O.a99,O.a91])
 r(H.Pl,H.Lr)
 q(J.h,[J.K,J.tV,J.tW,J.v,J.ki,J.iV,H.mi,H.d0,W.R,W.Og,W.ll,W.B7,W.rR,W.PV,W.bV,W.iH,W.HU,W.eR,W.fQ,W.Q8,W.QG,W.o1,W.It,W.t7,W.Iv,W.QO,W.tg,W.S,W.IU,W.RV,W.lQ,W.fW,W.Tq,W.Je,W.tK,W.V4,W.Vp,W.JL,W.JM,W.h8,W.JN,W.W8,W.K5,W.Wl,W.i0,W.WG,W.ha,W.Ko,W.Lp,W.hl,W.LN,W.hm,W.a0X,W.LW,W.Mo,W.a2d,W.hq,W.Mw,W.a2h,W.a2u,W.a2G,W.N6,W.Na,W.Ng,W.Ns,W.Nu,P.Uf,P.u3,P.Wh,P.j_,P.Jx,P.j2,P.Kc,P.WY,P.XA,P.M_,P.jv,P.MC,P.Oy,P.Hh,P.Ok,P.LT])
 q(J.K,[H.Ph,H.Pi,H.Pj,H.PJ,H.a0I,H.a0l,H.a_H,H.a_D,H.a_C,H.a_G,H.a_F,H.a_9,H.a_8,H.a0t,H.a0s,H.a0n,H.a0m,H.a0v,H.a0u,H.a0b,H.a0a,H.a0d,H.a0c,H.a0G,H.a0F,H.a08,H.a07,H.a_j,H.a_i,H.a_t,H.a_s,H.a02,H.a01,H.a_g,H.a_f,H.a0h,H.a0g,H.a_U,H.a_T,H.a_e,H.a_d,H.a0j,H.a0i,H.a_x,H.a_w,H.a0C,H.a0B,H.a_v,H.a_u,H.a_Q,H.a_P,H.a_b,H.a_a,H.a_n,H.a_m,H.a_c,H.a_I,H.a0f,H.a0e,H.a_O,H.a_S,H.a_N,H.a_l,H.a_k,H.a_K,H.a_J,H.a00,H.a6I,H.a_y,H.a0_,H.a_p,H.a_o,H.a04,H.a_h,H.a03,H.a_X,H.a_W,H.a_Y,H.a_Z,H.a0z,H.a0r,H.a0q,H.a0p,H.a0o,H.a06,H.a05,H.a0A,H.a0k,H.a_E,H.a0y,H.a_A,H.a0E,H.a_z,H.FF,H.a_M,H.a_V,H.a0w,H.a0x,H.a0H,H.a0D,H.a_B,H.a2p,H.a_r,H.Ut,H.a_R,H.a_q,H.a_L,H.m4,J.Es,J.ig,J.hP,L.Ux])
